@@ -1,13 +1,26 @@
 <template>
-  <HeaderComponent title="Task Tracker" />
+  <div class="container">
+    <HeaderComponent title="Task Tracker" />
+    <TaskComponent :tasks="tasks" />
+  </div>
 </template>
 
 <script>
 import HeaderComponent from "./components/HeaderComponent.vue";
+import TaskComponent from "./components/TaskComponent.vue";
 export default {
   name: "App",
   components: {
     HeaderComponent,
+    TaskComponent,
+  },
+  data() {
+    return {
+      tasks: [
+        { title: "task 1", description: "do something" },
+        { title: "task 2", description: "do another something" },
+      ],
+    };
   },
 };
 </script>
